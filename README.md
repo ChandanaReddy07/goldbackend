@@ -4,7 +4,7 @@
 # while updating through Postman
 ![image](https://github.com/ChandanaReddy07/goldbackend/assets/57955783/fae1f5cc-a762-418f-9900-95878121ab8b)
 
-# After getting updated record in MongoDb looks like!
+# After updating ,record in MongoDb looks like!
 ![image](https://github.com/ChandanaReddy07/goldbackend/assets/57955783/4563cbb9-59ff-48ff-8ca0-02a9623570e3)
 
 
