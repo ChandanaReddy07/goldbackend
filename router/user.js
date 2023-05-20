@@ -49,9 +49,10 @@ router.put("/users/:id", async (req, res) => {
   try {
     const userId = req.params.id;
     const updatedData = req.body;
+    
 
     // Find the user by ID in the database
-    const user = await User.findOne({ id: userId });
+    const user = await User.findById(userId);
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });
