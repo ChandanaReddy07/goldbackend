@@ -46,27 +46,26 @@ router.get("/users", async (req, res) => {
 });
 
 router.put("/users/:id", async (req, res) => {
+
   try {
     const userId = req.params.id;
     const updatedData = req.body;
     
 
     // Find the user by ID in the database
-    const user = await User.findById(userId);
+    const user = await User.findOne({id:userId});
 
     if (!user) {
       return res.status(404).json({ error: "User not found" });
     }
 
-    // Update the user details dynamically
-    for (let field in updatedData) {
-      user[field] = updatedData[field];
-    }
+     // Update the user details dynamically
+     Object.assign(user, updatedData);
 
-    // Save the updated user details to the database
-    await user.save();
+     // Save the updated user details to the database
+     await user.save();
 
-    res.json({ message: "User details updated successfully" });
+    res.json({ message: "User details updated successfully" ,user:user});
   } catch (error) {
     console.error("Error updating user details:", error);
     res.status(500).json({ error: "Failed to update user details" });
