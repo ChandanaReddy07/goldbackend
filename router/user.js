@@ -64,7 +64,7 @@ router.put("/users/:id", async (req, res) => {
 
      // Save the updated user details to the database
      await user.save();
-
+    //Response 
     res.json({ message: "User details updated successfully" ,user:user});
   } catch (error) {
     console.error("Error updating user details:", error);
